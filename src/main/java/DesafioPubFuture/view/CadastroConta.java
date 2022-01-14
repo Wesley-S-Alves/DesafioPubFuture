@@ -46,18 +46,21 @@ public class CadastroConta extends javax.swing.JFrame {
             while(rs.next()){
                 jComboBoxTipo.addItem(rs.getString("Nome"));
             }
-        
+        conn.close();
+        pStatement.close();
     }
 
     public Integer TipoContaSalva()throws SQLException{
         String i = String.valueOf(jComboBoxTipo.getSelectedItem());
         String j = String.valueOf(jComboInstFinanceira.getSelectedIndex()+1);
-        String sql = "SELECT Id FROM TipoConta WHERE InstFinanceira = " + j + " AND Nome = '" + i + "';" ;
+        String sql = "SELECT * FROM TipoConta WHERE InstFinanceira = " + j + " AND Nome = '" + i + "';" ;
         System.out.println(sql);
         Connection conn = new ConnectionMVC().getConnection();
         PreparedStatement stmt = conn.prepareStatement(sql);
         ResultSet rs = stmt.executeQuery();
         Integer tipoConta = Integer.valueOf(rs.getString("Id"));
+        conn.close();
+        stmt.close();
         return tipoConta;
 
     }
