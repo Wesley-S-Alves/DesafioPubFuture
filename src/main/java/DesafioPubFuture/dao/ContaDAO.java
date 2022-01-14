@@ -8,7 +8,7 @@ public class ContaDAO {
             throws ExceptionDAO, SQLException{
         PreparedStatement stmt = null;
         Connection conn = null;
-        String sql = "INSERT INTO Conta(Saldo, Nome, TipoConta" +
+        String sql = "INSERT INTO Conta (Saldo, Nome, TipoConta)" +
                 "VALUES (?,?,?);";
 
         try {
@@ -20,7 +20,7 @@ public class ContaDAO {
             stmt.executeUpdate();
 
         } catch (SQLException e){
-            throw new ExceptionDAO("Erro ao cadastrar o tipo de institui��o: " + e);
+            throw new ExceptionDAO("Erro ao cadastrar a conta: " + e);
         }finally{
             try {if(stmt != null){ stmt.close();}
             }catch(SQLException  e){

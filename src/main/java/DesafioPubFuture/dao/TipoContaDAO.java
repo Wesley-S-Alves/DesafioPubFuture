@@ -9,7 +9,7 @@ public class TipoContaDAO {
             throws ExceptionDAO, SQLException {
         PreparedStatement stmt = null;
         Connection conn = null;
-        String sql = "INSERT INTO TipoConta (Nome) VALUES(?,?);";
+        String sql = "INSERT INTO TipoConta (Nome, InstFinanceira) VALUES(?,?);";
 
         try {
             conn = new ConnectionMVC().getConnection();

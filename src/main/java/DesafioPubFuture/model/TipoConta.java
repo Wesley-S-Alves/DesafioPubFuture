@@ -27,8 +27,8 @@ public class TipoConta {
         return Id;
     }
 
-    public void setId(Integer id) {
-        Id = id;
+    public void setId(Integer Id) {
+        this.Id = Id;
     }
 
     public String getNome() {
@@ -36,7 +36,7 @@ public class TipoConta {
     }
 
     public void setNome(String nome) {
-        nome = nome;
+        this.nome = nome;
     }
 
     public InstFinanceira getInstFinanceira() {
@@ -55,6 +55,7 @@ public class TipoConta {
         this.conta = conta;
     }
 
+  
     public void cadastraTipoConta(TipoConta tipoConta)throws ExceptionDAO, SQLException{
         new TipoContaDAO().cadastraTipoConta(tipoConta);
     }

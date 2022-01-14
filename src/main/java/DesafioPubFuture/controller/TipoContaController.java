@@ -9,7 +9,7 @@ public class TipoContaController {
     public boolean cadastraTipoConta(String nome, Integer idInstFinanceira)
         throws ExceptionDAO, SQLException {
         if(nome!=null && idInstFinanceira !=null){
-            TipoConta tipoConta = new TipoConta();
+            TipoConta tipoConta = new TipoConta(nome, idInstFinanceira);
             tipoConta.cadastraTipoConta(tipoConta);
             return true;
         }else{
