@@ -1,6 +1,7 @@
 package model;
 
 import dao.ExceptionDAO;
+import dao.TipoReceitaDAO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

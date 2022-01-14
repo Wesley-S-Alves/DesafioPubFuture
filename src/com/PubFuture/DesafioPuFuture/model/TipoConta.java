@@ -1,6 +1,7 @@
 package model;
 
 import dao.ExceptionDAO;
+import dao.TipoContaDAO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,10 +15,10 @@ public class TipoConta {
 
     public TipoConta(){}
 
-    public TipoConta(String nome, Integer inInstFinanceira){
+    public TipoConta(String nome, Integer idInstFinanceira){
         this.nome=  nome;
         InstFinanceira instFinanceira = new InstFinanceira();
-        instFinanceira.setId(instFinanceira);
+        instFinanceira.setId(idInstFinanceira);
         this.instFinanceira = instFinanceira;
 
     }
