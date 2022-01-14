@@ -1,6 +1,7 @@
 package model;
 
 import dao.ExceptionDAO;
+import dao.ReceitaDAO;
 
 import java.sql.SQLException;
 import java.util.Date;

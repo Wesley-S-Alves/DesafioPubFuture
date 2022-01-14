@@ -21,7 +21,7 @@ public class DespesaDAO {
             stmt.setString(4, despesa.getDescricao());
             stmt.setDate(5, new Date(despesa.getDataPagamento().getTime()));
             stmt.setDate(6, new Date(despesa.getDataPagamentoEsperado().getTime()));
-
+            stmt.executeUpdate();
         }catch (SQLException e){
             throw new ExceptionDAO(
                     "Erro ao cadastrar a despesa: " + e);
