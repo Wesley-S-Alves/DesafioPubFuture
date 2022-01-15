@@ -9,7 +9,7 @@ public class DespesaDAO {
     ) throws ExceptionDAO, SQLException{
         PreparedStatement stmt =null;
         Connection conn= null;
-        String sql = "INSERT INTO Despesa (Valor, TipoDepesa," +
+        String sql = "INSERT INTO Despesa (Valor, TipoDespesa," +
                 " Conta, Descricao, dataPagamento, dataPagamentoEsperado) " +
                 "VALUES (?,?,?,?,?,?);";
         try {

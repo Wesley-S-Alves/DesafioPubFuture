@@ -4,6 +4,7 @@ import DesafioPubFuture.dao.ExceptionDAO;
 import DesafioPubFuture.model.TipoReceita;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class TipoReceitaController {
 
@@ -14,5 +15,9 @@ public class TipoReceitaController {
             return true;
         }else{
             return false;}
+    }
+    
+    public ArrayList<TipoReceita> consultaTipoReceita(String nome) throws SQLException,ExceptionDAO {
+        return new TipoReceita().consultaTipoReceita(nome);
     }
 }

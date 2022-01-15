@@ -22,6 +22,7 @@ public class ReceitaDAO {
             stmt.setDate(5, new Date(receita.getDataRecebimento().getTime()));
             stmt.setDate(6, new Date(receita.getDataRecebimentoEsperado().getTime()));
             stmt.executeUpdate();
+
         }catch (SQLException e){
                 throw new ExceptionDAO(
                         "Erro ao cadastrar a receita: " + e);

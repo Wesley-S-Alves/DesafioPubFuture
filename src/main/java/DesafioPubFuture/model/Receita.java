@@ -25,6 +25,7 @@ public class Receita {
         this.tipoReceita = tipoReceita;
         Conta conta = new Conta();
         conta.setId(idConta);
+        this.conta = conta;
         this.descricao = descricao;
         this.dataRecebimento = dataRecebimento;
         this.dataRecebimentoEsperado = dataRecebimentoEsperado;

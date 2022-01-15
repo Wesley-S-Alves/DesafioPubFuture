@@ -2,6 +2,7 @@ package DesafioPubFuture.dao;
 
 import DesafioPubFuture.model.TipoReceita;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class TipoReceitaDAO {
     public void cadastraTipoReceita(TipoReceita tipoReceita)
@@ -39,4 +40,23 @@ public class TipoReceitaDAO {
         }
 
     }
+    
+   public ArrayList<TipoReceita> consultaTipoReceita(String nome) throws  ExceptionDAO, SQLException {
+       String sql= "Select * from TipoReceita where Nome like '%" + nome + "%' ORDER BY Id;";
+       ArrayList<TipoReceita> tipos = null;
+       Connection conn = new ConnectionMVC().getConnection();
+       PreparedStatement stmt = conn.prepareStatement(sql);
+       ResultSet rs = stmt.executeQuery(sql);
+       
+       if (rs!=null){
+           while(rs.next()){
+               TipoReceita tipoReceita = new TipoReceita();
+               tipoReceita.setNome(rs.getString("Nome"));
+               tipos.add(tipoReceita);
+           }
+       }
+       conn.close();
+       stmt.close();
+    return tipos;
+   }
 }

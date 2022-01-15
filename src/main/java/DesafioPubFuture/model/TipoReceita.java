@@ -42,4 +42,8 @@ public class TipoReceita {
     public void cadastraTipoReceita(TipoReceita tipoReceita)throws ExceptionDAO, SQLException{
         new TipoReceitaDAO().cadastraTipoReceita(tipoReceita);
     }
+    
+    public ArrayList<TipoReceita> consultaTipoReceita (String nome) throws ExceptionDAO,SQLException{
+        return new TipoReceitaDAO().consultaTipoReceita(nome);
+    }
 }
