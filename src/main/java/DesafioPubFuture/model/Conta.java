@@ -11,8 +11,8 @@ public class Conta {
     private double saldo;
     private String nome;
     private TipoConta tipoConta;
-    private ArrayList<Despesa> despesa = new ArrayList<Despesa>();
-    private ArrayList<Receita> receita = new ArrayList<Receita>();
+    private ArrayList<Despesa> despesa = new ArrayList<>();
+    private ArrayList<Receita> receita = new ArrayList<>();
 
     public Conta(){}
 
@@ -76,5 +76,19 @@ public class Conta {
     public void cadastraConta(Conta conta)throws  SQLException, ExceptionDAO{
         new ContaDAO().cadastraConta(conta);
     }
+    
+    public ArrayList<Conta> consultaConta(String nome)
+            throws ExceptionDAO, SQLException{
+        return new ContaDAO().consultaConta(nome);
+    }
+    
+    public void alteraConta(Conta conta)throws SQLException, ExceptionDAO{
+        new ContaDAO().alteraConta(conta);
+    }
+    
+    public void deletaConta(Conta conta)throws SQLException, ExceptionDAO{
+        new ContaDAO().deletaConta(conta);
+    }
 }
+
 

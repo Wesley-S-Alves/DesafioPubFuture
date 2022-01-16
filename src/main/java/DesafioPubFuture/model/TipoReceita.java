@@ -46,4 +46,12 @@ public class TipoReceita {
     public ArrayList<TipoReceita> consultaTipoReceita (String nome) throws ExceptionDAO,SQLException{
         return new TipoReceitaDAO().consultaTipoReceita(nome);
     }
+    
+    public void alteraTipoReceita (TipoReceita tipoReceita)throws ExceptionDAO, SQLException{
+        new TipoReceitaDAO().alteraTipoReceita(tipoReceita);
+    }
+    
+    public void deletaTipoReceita (TipoReceita tipoReceita)throws ExceptionDAO, SQLException{
+        new TipoReceitaDAO().deletaTipoReceita(tipoReceita);
+    }
 }

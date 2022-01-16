@@ -59,4 +59,16 @@ public class TipoConta {
     public void cadastraTipoConta(TipoConta tipoConta)throws ExceptionDAO, SQLException{
         new TipoContaDAO().cadastraTipoConta(tipoConta);
     }
+    
+    public ArrayList<TipoConta> consultaTipoConta (String nome) throws ExceptionDAO,SQLException{
+        return new TipoContaDAO().consultaTipoConta(nome);
+    }
+    
+    public void alteraTipoConta(TipoConta tipoConta)throws ExceptionDAO, SQLException{
+        new TipoContaDAO().alteraTipoConta(tipoConta);
+    }
+    
+    public void deletaTipoConta(TipoConta tipoConta)throws ExceptionDAO, SQLException{
+        new TipoContaDAO().deletaTipoConta(tipoConta);
+    }
 }

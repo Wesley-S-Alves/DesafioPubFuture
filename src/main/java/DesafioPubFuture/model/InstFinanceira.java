@@ -43,4 +43,16 @@ public class InstFinanceira {
             throws ExceptionDAO, SQLException{
         new InstFinanceiraDAO().cadastraInstFinanceira(instFinanceira);
     }
+    
+    public ArrayList<InstFinanceira> consultaInstFinanceira(String nome) throws ExceptionDAO, SQLException {
+        return new InstFinanceiraDAO().consultaInstFinanceira(nome);
+    }
+    
+    public void alteraInstFinanceira(InstFinanceira instFinanceira) throws ExceptionDAO,SQLException{
+        new InstFinanceiraDAO().alteraInstFinanceira(instFinanceira);
+    }
+    
+    public void deletaInstFinanceira (InstFinanceira instFinanceira)throws ExceptionDAO, SQLException{
+        new InstFinanceiraDAO().deletaInstFinanceira(instFinanceira);
+    }
 }

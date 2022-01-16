@@ -4,6 +4,7 @@ import DesafioPubFuture.dao.ExceptionDAO;
 import DesafioPubFuture.dao.ReceitaDAO;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Receita {
@@ -90,5 +91,18 @@ public class Receita {
 
     public void cadastraReceita(Receita receita)throws ExceptionDAO, SQLException{
         new ReceitaDAO().cadastraReceita(receita);
+    }
+    
+    public ArrayList<Receita> consultaReceita(String descricao)
+            throws SQLException, ExceptionDAO{
+        return new ReceitaDAO().consultaReceita(descricao);
+    }
+    
+    public void alteraReceita(Receita receita)throws SQLException, ExceptionDAO{
+        new ReceitaDAO().alteraReceita(receita);
+    }
+    
+    public void deleteReceita(Receita receita)throws SQLException, ExceptionDAO{
+        new ReceitaDAO().deletaReceita(receita);
     }
 }

@@ -4,6 +4,7 @@ import DesafioPubFuture.dao.DespesaDAO;
 import DesafioPubFuture.dao.ExceptionDAO;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Despesa {
@@ -91,5 +92,18 @@ public class Despesa {
     public void cadastraDespesa(Despesa despesa)
             throws ExceptionDAO, SQLException {
         new DespesaDAO().cadastraDespesa(despesa);
+    }
+    
+    public ArrayList<Despesa> consultaDespesa(String descricao)
+            throws SQLException, ExceptionDAO{
+        return new DespesaDAO().consultaDespesa(descricao);
+    }
+    
+    public void alteraDespesa(Despesa despesa)throws SQLException, ExceptionDAO{
+        new DespesaDAO().alteraDespesa(despesa);
+    }
+    
+    public void deleteDespesa(Despesa despesa)throws SQLException, ExceptionDAO{
+        new DespesaDAO().deletaDespesa(despesa);
     }
 }
