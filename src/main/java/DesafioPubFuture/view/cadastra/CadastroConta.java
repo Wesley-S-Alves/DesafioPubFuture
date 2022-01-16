@@ -226,7 +226,13 @@ public class CadastroConta extends javax.swing.JFrame {
         jButtonSalvar.setText("Salvar");
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSalvarActionPerformed(evt);
+                try {
+                    jButtonSalvarActionPerformed(evt);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (ExceptionDAO e) {
+                    e.printStackTrace();
+                }
             }
         });
 

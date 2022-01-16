@@ -91,7 +91,13 @@ public class CadastroTipoReceita extends javax.swing.JFrame {
         jButtonSalva.setText("Salvar");
         jButtonSalva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSalvaActionPerformed(evt);
+                try {
+                    jButtonSalvaActionPerformed(evt);
+                } catch (ExceptionDAO e) {
+                    e.printStackTrace();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
